@@ -7,13 +7,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA7yequ2FkyALTJ9FhSx8IkK_kWalzAeKg",
-  authDomain: "studentjobportal-651a3.firebaseapp.com",
-  projectId: "studentjobportal-651a3",
-  storageBucket: "studentjobportal-651a3.firebasestorage.app",
-  messagingSenderId: "832829204804",
-  appId: "1:832829204804:web:8e0271dae715234d320f11",
-  measurementId: "G-7MB9Z4NCT5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
