@@ -1,0 +1,167 @@
+.applicant-management-screen {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.applicants-list {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .applicant-management-screen {
+    padding: 1rem;
+  }
+}
+/* Add these new styles */
+.error-message {
+  color: #dc3545;
+  padding: 1rem;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  margin: 1rem;
+}
+
+.no-applicants {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.applicant-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.applicant-card.selected {
+  background-color: #f0f9ff;
+  border-left: 4px solid #3b82f6;
+}
+
+.applicant-select {
+  margin-right: 1rem;
+}
+
+.applicant-profile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.profile-info h3 {
+  margin: 0;
+  color: #023c3d;
+}
+
+.job-title {
+  margin: 0.25rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.application-date {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.view-cv {
+  padding: 0.5rem 1rem;
+  background-color: #e2f0fd;
+  color: #0d6efd;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.view-cv:hover {
+  background-color: #d0e3fb;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.action-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+.action-btn.shortlist {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.action-btn.reject {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+  .applicant-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .applicant-select {
+    margin-bottom: 1rem;
+  }
+
+  .applicant-profile {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .applicant-cv {
+    margin-bottom: 1rem;
+  }
+
+  .applicant-status {
+    margin-bottom: 1rem;
+  }
+
+  .applicant-actions {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .action-btn {
+    flex: 1;
+    margin-left: 0;
+  }
+}

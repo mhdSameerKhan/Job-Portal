@@ -1,0 +1,63 @@
+.bulk-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.selected-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.bulk-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.bulk-btn.shortlist {
+  background-color: #dcfce7;
+  color: #10b981;
+}
+
+.bulk-btn.reject {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.bulk-btn.message {
+  background-color: #e0f2fe;
+  color: #0ea5e9;
+}
+
+.bulk-btn span {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .bulk-actions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,27 @@
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-item {
+  background-color: #f3f4f6;
+  color: #023c3d;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remove-icon {
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.remove-icon:hover {
+  color: #ef4444;
+}

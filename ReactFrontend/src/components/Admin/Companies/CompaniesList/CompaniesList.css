@@ -1,0 +1,161 @@
+.companies-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.companies-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.no-companies {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  background: white;
+  border-radius: 8px;
+}
+
+.company-name a {
+  color: #023c3d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.company-name a:hover {
+  color: #25a18e;
+  text-decoration: underline;
+}
+
+.companies-table th {
+  text-align: left;
+  padding: 1rem;
+  color: #023c3d;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.companies-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+}
+
+.companies-table tr:last-child td {
+  border-bottom: none;
+}
+
+.companies-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.company-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.status-badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.action-btn.approve {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.action-btn.reject {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.action-btn.view {
+  background-color: #e2f0fd;
+  color: #0d6efd;
+}
+
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .companies-table {
+    display: block;
+  }
+
+  .companies-table thead {
+    display: none;
+  }
+
+  .companies-table tr {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .companies-table td {
+    padding: 0.5rem 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .companies-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #023c3d;
+    margin-right: 1rem;
+  }
+
+  .action-buttons {
+    justify-content: flex-end;
+  }
+}

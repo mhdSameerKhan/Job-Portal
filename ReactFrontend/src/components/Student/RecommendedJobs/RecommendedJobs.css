@@ -1,0 +1,40 @@
+.recommended-jobs {
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+  color: #023c3d;
+}
+
+.view-all {
+  background: none;
+  border: none;
+  color: #25a18e;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,51 @@
+.skills-input {
+  margin-bottom: 1.5rem;
+}
+
+.skills-input label {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  min-height: 3rem;
+}
+
+.skill-tag {
+  background-color: #f3f4f6;
+  color: #023c3d;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-tag button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.skills-container input {
+  flex: 1;
+  min-width: 150px;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}

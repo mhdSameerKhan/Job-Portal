@@ -1,0 +1,44 @@
+.cvs-screen {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cvs-container {
+  margin-top: 2rem;
+}
+
+.cvs-list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.no-cvs {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  background: white;
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cvs-screen {
+    padding: 1rem;
+  }
+
+  .cvs-list {
+    grid-template-columns: 1fr;
+  }
+}

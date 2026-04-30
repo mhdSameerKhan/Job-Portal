@@ -1,0 +1,25 @@
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #023c3d;
+  margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .profile-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-header p {
+    font-size: 0.875rem;
+  }
+}

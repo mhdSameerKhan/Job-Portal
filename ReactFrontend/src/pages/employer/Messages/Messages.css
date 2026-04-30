@@ -1,0 +1,41 @@
+.messages-screen {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 4rem);
+}
+
+.conversations-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .messages-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .conversations-column {
+    order: 2;
+  }
+
+  .message-column {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .messages-screen {
+    padding: 1rem;
+  }
+}

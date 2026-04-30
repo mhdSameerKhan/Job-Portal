@@ -1,0 +1,37 @@
+.stats-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 150px;
+}
+
+.stats-card h3 {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.stats-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #023c3d;
+  margin-bottom: 0.25rem;
+}
+
+.stats-comparison {
+  font-size: 0.75rem;
+  color: #25a18e;
+}
+
+@media (max-width: 768px) {
+  .stats-card {
+    padding: 1rem;
+  }
+
+  .stats-value {
+    font-size: 1.5rem;
+  }
+}

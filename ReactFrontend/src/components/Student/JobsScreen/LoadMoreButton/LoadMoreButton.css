@@ -1,0 +1,20 @@
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 3rem;
+}
+
+.load-more-btn {
+  background: none;
+  border: 1px solid #25a18e;
+  color: #25a18e;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: #f0fdfa;
+}

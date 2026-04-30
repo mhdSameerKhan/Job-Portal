@@ -1,0 +1,21 @@
+.post-job-nav {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+.post-job-nav h1 {
+  font-size: 1.5rem;
+  color: #023c3d;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .post-job-nav {
+    padding: 1rem;
+  }
+
+  .post-job-nav h1 {
+    font-size: 1.25rem;
+  }
+}

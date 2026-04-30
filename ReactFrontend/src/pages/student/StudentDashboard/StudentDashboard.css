@@ -1,0 +1,30 @@
+.student-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #023c3d;
+}
+
+@media (max-width: 768px) {
+  .student-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-content {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,77 @@
+.conversation-list {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.conversation-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.conversation-item:last-child {
+  border-bottom: none;
+}
+
+.conversation-item.unread {
+  background-color: #f0fdfa;
+}
+
+.employer-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #25a18e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.conversation-info {
+  flex: 1;
+}
+
+.conversation-info h3 {
+  font-size: 1rem;
+  color: #023c3d;
+  margin-bottom: 0.25rem;
+}
+
+.last-message {
+  font-size: 0.875rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #25a18e;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .conversation-item {
+    padding: 0.75rem;
+  }
+}

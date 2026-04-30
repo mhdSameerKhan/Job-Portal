@@ -1,0 +1,21 @@
+.skills-section {
+  margin-bottom: 2rem;
+}
+
+.skills-section h2 {
+  font-size: 1.25rem;
+  color: #023c3d;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

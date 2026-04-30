@@ -1,0 +1,51 @@
+.post-job-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Add these new styles */
+.salary-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.error-message {
+  color: #dc3545;
+  padding: 1rem;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.form-input .error-text {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .salary-range {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-actions button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.post-job-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .post-job-container {
+    padding: 1rem;
+  }
+}

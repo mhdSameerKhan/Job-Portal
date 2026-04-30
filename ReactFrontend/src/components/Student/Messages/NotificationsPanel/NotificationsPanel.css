@@ -1,0 +1,56 @@
+.notifications-panel {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.notifications-panel h2 {
+  font-size: 1.25rem;
+  color: #023c3d;
+  margin-bottom: 1.5rem;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.notification-item.unread {
+  background-color: #f0fdfa;
+}
+
+.notification-icon {
+  font-size: 1.25rem;
+}
+
+.notification-icon.message {
+  color: #25a18e;
+}
+
+.notification-icon.application {
+  color: #3b82f6;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-text {
+  font-size: 0.875rem;
+  color: #023c3d;
+  margin-bottom: 0.25rem;
+}
+
+.notification-time {
+  font-size: 0.75rem;
+  color: #6b7280;
+}

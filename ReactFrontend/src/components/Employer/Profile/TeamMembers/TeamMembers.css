@@ -1,0 +1,130 @@
+.team-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.team-header h2 {
+  color: #023c3d;
+  font-size: 1.5rem;
+}
+
+.add-member-btn {
+  background-color: #25a18e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-member-btn:hover {
+  background-color: #1d8877;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.member-info h3 {
+  color: #023c3d;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.member-role {
+  color: #25a18e;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.member-email {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.member-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+
+.action-btn.edit {
+  background-color: #fff3cd;
+  color: #856404;
+  border: none;
+}
+
+.action-btn.edit:hover {
+  background-color: #ffe69c;
+}
+
+.action-btn.remove {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: none;
+}
+
+.action-btn.remove:hover {
+  background-color: #f1aeb5;
+}
+
+@media (max-width: 768px) {
+  .member-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .member-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .member-actions {
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

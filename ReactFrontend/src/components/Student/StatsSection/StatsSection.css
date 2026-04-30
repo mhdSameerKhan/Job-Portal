@@ -1,0 +1,31 @@
+.stats-section {
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-completion-note {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    flex-wrap: wrap;
+  }
+
+  .stats-card {
+    min-width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-card {
+    min-width: 100%;
+  }
+}

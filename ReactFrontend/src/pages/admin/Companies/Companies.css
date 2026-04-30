@@ -1,0 +1,36 @@
+.admin-companies-page {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.companies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.companies-container h1 {
+  color: #023c3d;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.companies-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .companies-container {
+    padding: 0 1rem;
+  }
+
+  .companies-container h1 {
+    font-size: 1.75rem;
+  }
+}

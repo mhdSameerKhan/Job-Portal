@@ -1,0 +1,95 @@
+.company-info-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.company-logo {
+  margin-right: 1.5rem;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+}
+
+.company-details h2 {
+  color: #023c3d;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.industry,
+.location {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.company-description {
+  margin-bottom: 1.5rem;
+}
+
+.company-description h3 {
+  color: #023c3d;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.company-description p {
+  color: #495057;
+  line-height: 1.6;
+}
+
+.social-links h3 {
+  color: #023c3d;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  background-color: #f8f9fa;
+  color: #25a18e;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #25a18e;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .company-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-logo {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+  }
+}

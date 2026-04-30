@@ -1,0 +1,121 @@
+.pending-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.pending-card h2 {
+  color: #023c3d;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.pending-sections {
+  display: grid;
+  gap: 2rem;
+}
+
+.pending-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h3 {
+  color: #023c3d;
+  font-size: 1.1rem;
+}
+
+.badge {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.no-pending {
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.item-list li:last-child {
+  border-bottom: none;
+}
+
+.company-info {
+  flex: 1;
+}
+
+.company-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.company-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.company-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.review-btn {
+  background-color: #25a18e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.review-btn:hover {
+  background-color: #1d8877;
+}
+
+@media (max-width: 768px) {
+  .item-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .review-btn {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}

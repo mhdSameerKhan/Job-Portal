@@ -1,0 +1,59 @@
+.bulk-ops-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.bulk-ops-card h3 {
+  color: #023c3d;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.bulk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bulk-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.3s;
+}
+
+.bulk-btn:hover {
+  opacity: 0.9;
+}
+
+.bulk-btn.verify {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.bulk-btn.disable {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.bulk-btn.email {
+  background-color: #e2f0fd;
+  color: #0d6efd;
+}
+
+@media (max-width: 768px) {
+  .bulk-actions {
+    flex-direction: column;
+  }
+
+  .bulk-btn {
+    justify-content: center;
+  }
+}

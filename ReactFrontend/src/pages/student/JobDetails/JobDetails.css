@@ -1,0 +1,258 @@
+.job-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.job-details-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.job-details-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.job-details-header h2 {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.job-meta span {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.job-meta span:not(:last-child)::after {
+  content: "•";
+  margin-left: 1rem;
+  color: #ddd;
+}
+
+.remote-badge {
+  background-color: #e8eaf6;
+  color: #3949ab;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.job-type {
+  text-transform: capitalize;
+}
+
+.salary {
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.job-details-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.job-section {
+  margin-bottom: 2rem;
+}
+
+.job-section h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.job-section p {
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line;
+}
+
+.job-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  color: #333;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #eee;
+}
+
+.apply-section {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.apply-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.apply-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.apply-button:hover {
+  background-color: #1565c0;
+}
+
+.apply-button:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+.no-cv-warning {
+  background-color: #fff3e0;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.no-cv-warning p {
+  margin-bottom: 1rem;
+  color: #e65100;
+}
+
+.upload-cv-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ff9800;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.upload-cv-link:hover {
+  background-color: #f57c00;
+}
+
+.expired-notice {
+  background-color: #ffebee;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  color: #c62828;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.retry-button {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.not-found {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .job-details-content {
+    grid-template-columns: 1fr;
+  }
+
+  .job-actions {
+    position: static;
+  }
+
+  .job-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .job-meta span:not(:last-child)::after {
+    display: none;
+  }
+}

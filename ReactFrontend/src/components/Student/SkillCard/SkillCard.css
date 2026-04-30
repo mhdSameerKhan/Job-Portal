@@ -1,0 +1,67 @@
+.skill-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-header h3 {
+  font-size: 1rem;
+  color: #023c3d;
+}
+
+.level {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.progress-bar {
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #25a18e;
+  border-radius: 0.25rem;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.practice-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #f3f4f6;
+  color: #023c3d;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.practice-btn:hover {
+  background-color: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    padding: 1rem;
+  }
+}

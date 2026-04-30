@@ -1,0 +1,104 @@
+.verification-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.verification-card h2 {
+  color: #023c3d;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.status-badge.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-description {
+  color: #495057;
+  flex: 1;
+}
+
+.documents-section h3 {
+  color: #023c3d;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.documents-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.documents-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.doc-status {
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.doc-status.verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.doc-status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.upload-btn {
+  background-color: #25a18e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #1d8877;
+}
+
+@media (max-width: 480px) {
+  .status-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-badge {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+}

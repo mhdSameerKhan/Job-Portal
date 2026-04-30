@@ -1,0 +1,33 @@
+.dashboard-nav {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.nav-item {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-item.active {
+  color: #023c3d;
+  border-bottom-color: #25a18e;
+}
+
+.nav-item:hover:not(.active) {
+  color: #25a18e;
+}
+
+@media (max-width: 480px) {
+  .nav-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}

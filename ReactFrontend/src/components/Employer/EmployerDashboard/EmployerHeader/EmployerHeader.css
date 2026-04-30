@@ -1,0 +1,21 @@
+.employer-header {
+  margin-bottom: 2rem;
+}
+
+.employer-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #023c3d;
+  margin-bottom: 0.5rem;
+}
+
+.employer-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .employer-header h1 {
+    font-size: 1.5rem;
+  }
+}

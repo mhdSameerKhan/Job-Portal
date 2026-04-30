@@ -1,0 +1,32 @@
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.quick-action:hover {
+  transform: translateY(-2px);
+}
+
+.action-icon {
+  font-size: 1.5rem;
+  color: #25a18e;
+}
+
+.action-content h3 {
+  font-size: 1rem;
+  color: #023c3d;
+  margin-bottom: 0.25rem;
+}
+
+.action-content p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

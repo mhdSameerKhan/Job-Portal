@@ -1,0 +1,36 @@
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-header {
+  margin-bottom: 0.5rem;
+}
+
+.education-header h3 {
+  font-size: 1rem;
+  color: #023c3d;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.institution {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.date-range {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.5;
+}

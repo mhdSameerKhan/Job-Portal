@@ -1,0 +1,53 @@
+.application-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.job-info h3 {
+  font-size: 1rem;
+  color: #023c3d;
+  margin-bottom: 0.25rem;
+}
+
+.company {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.status {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.employer-action {
+  font-size: 0.875rem;
+  color: #25a18e;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .application-card {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .job-info,
+  .status,
+  .date,
+  .employer-action {
+    padding: 0.25rem 0;
+  }
+}

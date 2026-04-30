@@ -1,0 +1,50 @@
+.admin-dashboard {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.dashboard-container h1 {
+  color: #023c3d;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-columns {
+  display: flex;
+  gap: 2rem;
+}
+
+.column-main {
+  flex: 2;
+}
+
+.column-side {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard-columns {
+    flex-direction: column;
+  }
+
+  .column-main,
+  .column-side {
+    flex: auto;
+  }
+}

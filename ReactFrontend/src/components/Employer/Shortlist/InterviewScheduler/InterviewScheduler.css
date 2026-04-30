@@ -1,0 +1,170 @@
+.scheduler-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.scheduler-card h2 {
+  color: #023c3d;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.scheduler-content {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-section {
+  flex: 2;
+}
+
+.calendar-section h3 {
+  color: #023c3d;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.calendar-placeholder {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #6c757d;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-links {
+  flex: 1;
+}
+
+.video-links h3 {
+  color: #023c3d;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.video-platforms {
+  margin-bottom: 1.5rem;
+}
+
+.platform-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.platform-option input {
+  margin-right: 0.75rem;
+}
+
+.platform-option label {
+  color: #495057;
+  cursor: pointer;
+}
+
+.link-generator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.generate-btn {
+  background-color: #25a18e;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+  background-color: #1d8877;
+}
+
+.generated-link {
+  display: flex;
+}
+
+.generated-link input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px 0 0 4px;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+}
+
+.copy-btn {
+  background-color: #e2e3e5;
+  color: #495057;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+  background-color: #d3d6d8;
+}
+
+.scheduler-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.cancel-btn {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #e2e3e5;
+}
+
+.send-btn {
+  background-color: #023c3d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+  background-color: #012627;
+}
+
+@media (max-width: 992px) {
+  .scheduler-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .scheduler-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .send-btn {
+    width: 100%;
+  }
+}
