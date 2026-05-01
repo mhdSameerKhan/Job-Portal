@@ -13,6 +13,8 @@ import "./Messages.css";
 
 // No polling - user requested no realtime updates
 
+import { employerMockContacts } from "../../student/Messages/mockData";
+
 const MessagesScreen = () => {
   const { user } = useAuth();
   const location = useLocation();
@@ -27,11 +29,16 @@ const MessagesScreen = () => {
 
   const { candidateId, jobId, candidateName } = location.state || {};
 
-  const currentConversation = conversations.find(
-    (conv) => conv.id === selectedConversation
-  );
-  const recipientName =
-    currentConversation?.student?.user
+  const isMock = String(selectedConversation).startsWith("mock-");
+  const mockConv = employerMockContacts.find(c => c.id === selectedConversation);
+
+  const currentConversation = isMock
+    ? mockConv
+    : conversations.find((conv) => conv.id === selectedConversation);
+
+  const recipientName = isMock
+    ? mockConv.name
+    : currentConversation?.student?.user
       ? `${currentConversation.student.user.first_name || ''} ${currentConversation.student.user.last_name || ''}`.trim() || candidateName || "Student"
       : candidateName || "Student";
 
@@ -41,11 +48,15 @@ const MessagesScreen = () => {
       setError(null);
       const response = await messagingService.getConversations();
       const conversationData = response.data || [];
-      setConversations(conversationData);
+      
+      // Combine real and mock conversations
+      setConversations([...conversationData, ...employerMockContacts]);
       return conversationData;
     } catch (err) {
       setError("Failed to load conversations. Please try again.");
       console.error("Error fetching conversations:", err);
+      // Even if fetch fails, show mock contacts
+      setConversations(employerMockContacts);
       return [];
     } finally {
       setLoading(false);
@@ -54,10 +65,24 @@ const MessagesScreen = () => {
 
   const fetchMessages = async (conversationId) => {
     if (!conversationId) return;
+
+    if (String(conversationId).startsWith("mock-")) {
+      const mock = employerMockContacts.find(c => c.id === conversationId);
+      const adaptedMessages = mock.messages.map(m => ({
+        id: m.id,
+        content: m.text,
+        sender_id: m.sender === "me" ? user?.id : "other",
+        sender: m.sender === "me" ? (user?.user || user) : { id: "other", name: mock.name },
+        timestamp: new Date().toISOString(),
+        created_at: new Date().toISOString()
+      }));
+      setMessages(adaptedMessages);
+      scrollToBottom();
+      return;
+    }
+
     try {
       const response = await messagingService.getMessages(conversationId);
-      // Backend returns: { success: true, data: { messages: [...], pagination: {...} } }
-      // Service returns: response.data (which is the JSON body)
       const messagesData = response?.data?.messages || response?.messages || [];
       setMessages(Array.isArray(messagesData) ? messagesData : []);
       scrollToBottom();
@@ -139,10 +164,27 @@ const MessagesScreen = () => {
       is_read: false,
     };
 
-    try {
-      setMessages((prev) => [...prev, tempMessage]);
-      scrollToBottom();
+    setMessages((prev) => [...prev, tempMessage]);
+    scrollToBottom();
 
+    if (String(selectedConversation).startsWith("mock-")) {
+      // Fake reply logic
+      setTimeout(() => {
+        const reply = {
+          id: Date.now() + 1,
+          content: "Hello! I am a student candidate test bot. I've received your message and will respond as soon as I can. This is a great opportunity!",
+          sender: { id: "other", name: recipientName },
+          sender_id: "other",
+          timestamp: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        };
+        setMessages(prev => [...prev, reply]);
+        scrollToBottom();
+      }, 1000);
+      return;
+    }
+
+    try {
       const response = await messagingService.sendMessage(
         selectedConversation,
         messageContent

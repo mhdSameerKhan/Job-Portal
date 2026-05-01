@@ -385,13 +385,26 @@ router.post('/:id/apply', authenticate, async (req, res) => {
 
     const { Timestamp } = require('firebase-admin/firestore');
     const application = await Application.create({
+      job_id: req.params.id,
       student_id: student.id,
-      job_id: job.id,
       cv_id: cv_id || null,
-      cover_letter: cover_letter || '',
       status: 'applied',
-      application_date: Timestamp.now()
+      application_date: new Date(),
+      cover_letter: cover_letter || ''
     });
+
+    // Create notification for employer
+    const NotificationService = require('../services/NotificationService');
+    const EmployerService = require('../services/EmployerService');
+    const employer = await EmployerService.findById(job.employer_id);
+    if (employer && employer.user_id) {
+      await NotificationService.notify(
+        employer.user_id,
+        'application',
+        `New application received for "${job.title}"`,
+        application.id
+      );
+    }
 
     const populatedApplication = await Application.findByIdWithDetails(application.id);
 

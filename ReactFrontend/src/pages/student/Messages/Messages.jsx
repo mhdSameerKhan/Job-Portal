@@ -9,6 +9,8 @@ import "./Messages.css";
 
 // No polling - user requested no realtime updates
 
+import { mockContacts } from "./mockData";
+
 const MessagesScreen = () => {
   const { user } = useAuth();
   const location = useLocation();
@@ -24,11 +26,17 @@ const MessagesScreen = () => {
 
   const { candidateId, jobId, candidateName } = location.state || {};
 
-  const currentConversation = conversations.find(
-    (conv) => conv.id === selectedConversation
-  );
-  const recipientName =
-    user.user_type === 2 
+  // Check if selected is a mock conversation
+  const isMock = String(selectedConversation).startsWith("mock-");
+  const mockConv = mockContacts.find(c => c.id === selectedConversation);
+
+  const currentConversation = isMock 
+    ? mockConv 
+    : conversations.find((conv) => conv.id === selectedConversation);
+
+  const recipientName = isMock
+    ? mockConv.name
+    : user.user_type === 2 
       ? currentConversation?.student?.user?.name || candidateName || "Student"
       : currentConversation?.employer?.company_name || "Employer";
 
@@ -38,11 +46,15 @@ const MessagesScreen = () => {
       setError(null);
       const response = await messagingService.getConversations();
       const conversationData = response.data || [];
-      setConversations(conversationData);
+      
+      // Combine real and mock conversations
+      setConversations([...conversationData, ...mockContacts]);
       return conversationData;
     } catch (err) {
       setError("Failed to load conversations. Please try again.");
       console.error("Error fetching conversations:", err);
+      // Even if fetch fails, show mock contacts
+      setConversations(mockContacts);
       return [];
     } finally {
       setLoading(false);
@@ -51,10 +63,25 @@ const MessagesScreen = () => {
 
   const fetchMessages = async (conversationId) => {
     if (!conversationId) return;
+    
+    if (String(conversationId).startsWith("mock-")) {
+      const mock = mockContacts.find(c => c.id === conversationId);
+      // Adapt mock messages to the app's expected format
+      const adaptedMessages = mock.messages.map(m => ({
+        id: m.id,
+        content: m.text,
+        sender_id: m.sender === "me" ? user?.id : "other",
+        sender: m.sender === "me" ? (user?.user || user) : { id: "other", name: mock.name },
+        timestamp: new Date().toISOString(),
+        created_at: new Date().toISOString()
+      }));
+      setMessages(adaptedMessages);
+      scrollToBottom();
+      return;
+    }
+
     try {
       const response = await messagingService.getMessages(conversationId);
-      // Backend returns: { success: true, data: { messages: [...], pagination: {...} } }
-      // Service returns: response.data (which is the JSON body)
       const messagesData = response?.data?.messages || response?.messages || [];
       setMessages(Array.isArray(messagesData) ? messagesData : []);
       scrollToBottom();
@@ -151,17 +178,33 @@ const MessagesScreen = () => {
       is_read: false,
     };
 
-    try {
-      setMessages((prev) => [...prev, tempMessage]);
-      setNewMessage("");
-      scrollToBottom();
+    setMessages((prev) => [...prev, tempMessage]);
+    setNewMessage("");
+    scrollToBottom();
 
+    if (String(selectedConversation).startsWith("mock-")) {
+      // Fake reply logic
+      setTimeout(() => {
+        const reply = {
+          id: Date.now() + 1,
+          content: "Thank you for your message! I'm a bot replying to your test message. We will get back to you soon.",
+          sender: { id: "other", name: recipientName },
+          sender_id: "other",
+          timestamp: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        };
+        setMessages(prev => [...prev, reply]);
+        scrollToBottom();
+      }, 1000);
+      return;
+    }
+
+    try {
       const response = await messagingService.sendMessage(
         selectedConversation,
         messageContent
       );
 
-      // Handle response format: { success: true, data: { message: {...} } }
       const messageData = response?.data?.message || response?.message || response?.data;
       
       if (messageData && messageData.id) {
@@ -169,11 +212,9 @@ const MessagesScreen = () => {
           prev.map((msg) => (msg.id === tempMessageId ? messageData : msg))
         );
       } else {
-        // If response doesn't have message, refetch messages
         await fetchMessages(selectedConversation);
       }
 
-      // Update conversation list
       setConversations((prev) =>
         prev
           .map((conv) =>
@@ -257,8 +298,10 @@ const MessagesScreen = () => {
 
         <div className="conversation-list">
           {conversations.map((conversation) => {
-            const name =
-              user.user_type === 2
+            const isMock = String(conversation.id).startsWith("mock-");
+            const name = isMock
+              ? conversation.name
+              : user.user_type === 2
                 ? conversation.student?.user?.name || "Student"
                 : conversation.employer?.company_name || "Employer";
 
@@ -271,13 +314,21 @@ const MessagesScreen = () => {
                 onClick={() => setSelectedConversation(conversation.id)}
               >
                 <div className="conversation-info">
-                  <h4>{name}</h4>
+                  <h4>
+                    <span>
+                      {name}
+                      {isMock && (
+                        <span className={`status-dot ${conversation.isOnline ? "online" : "offline"}`}></span>
+                      )}
+                    </span>
+                    {isMock && conversation.unread && <span className="unread-badge">New</span>}
+                  </h4>
                   <p className="last-message">
-                    {conversation.last_message?.content || "No messages yet"}
+                    {isMock ? conversation.lastMessage : (conversation.last_message?.content || "No messages yet")}
                   </p>
                 </div>
                 <span className="conversation-time">
-                  {formatTime(conversation.updated_at)}
+                  {isMock ? conversation.time : formatTime(conversation.updated_at)}
                 </span>
               </div>
             );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext";
 import "./Footer.css";
 
 const Footer = () => {
@@ -44,24 +45,28 @@ const Footer = () => {
     }
   };
 
+  const { isAuthenticated } = useAuth();
+
   return (
     <footer className="footer-container" ref={footerRef}>
-      <div className={`footer-top ${isVisible ? "fade-in-up" : ""}`}>
-        <div className="footer-cta">
-          <h2>Ready to Find Your Perfect Student Job?</h2>
-          <p>
-            Join thousands of students who have found valuable work experience
-            while studying. Create your profile in minutes.
-          </p>
-          <Link to="/register" className="cta-button">
-            <span>Sign Up Now!</span>
-            <span className="button-arrow">→</span>
-          </Link>
-          <p className="login-text">
-            Already have an account? <Link to="/login">Sign in</Link>
-          </p>
+      {!isAuthenticated() && (
+        <div className={`footer-top ${isVisible ? "fade-in-up" : ""}`}>
+          <div className="footer-cta">
+            <h2>Ready to Find Your Perfect Student Job?</h2>
+            <p>
+              Join thousands of students who have found valuable work experience
+              while studying. Create your profile in minutes.
+            </p>
+            <Link to="/register" className="cta-button">
+              <span>Sign Up Now!</span>
+              <span className="button-arrow">→</span>
+            </Link>
+            <p className="login-text">
+              Already have an account? <Link to="/login">Sign in</Link>
+            </p>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={`footer-main ${isVisible ? "fade-in-up" : ""}`} style={{ animationDelay: "0.1s" }}>
         <div className="footer-about">
@@ -99,12 +104,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/student/jobs">
+                <Link to="/companies">
                   <span>Companies</span>
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                <Link to="/career-advice">
                   <span>Career Advice</span>
                 </Link>
               </li>
@@ -114,7 +119,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                <Link to="/salary-guide">
                   <span>Salary Guide</span>
                 </Link>
               </li>
@@ -135,17 +140,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                <Link to="/pricing">
                   <span>Pricing Plans</span>
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                <Link to="/recruitment-solutions">
                   <span>Recruitment Solutions</span>
                 </Link>
               </li>
               <li>
-                <Link to="/">
+                <Link to="/partner-with-us">
                   <span>Partner With Us</span>
                 </Link>
               </li>

@@ -299,6 +299,31 @@ router.post('/messages', authenticate, async (req, res) => {
       is_read: false
     });
 
+    // Create notification for recipient
+    const NotificationService = require('../services/NotificationService');
+    const recipientProfileId = user.user_type === 1 ? conversation.employer_id : conversation.student_id;
+    const recipientUserType = user.user_type === 1 ? 2 : 1;
+    
+    let recipientUserId;
+    if (recipientUserType === 1) {
+      const StudentService = require('../services/StudentService');
+      const recipientStudent = await StudentService.findById(recipientProfileId);
+      recipientUserId = recipientStudent?.user_id;
+    } else {
+      const EmployerService = require('../services/EmployerService');
+      const recipientEmployer = await EmployerService.findById(recipientProfileId);
+      recipientUserId = recipientEmployer?.user_id;
+    }
+
+    if (recipientUserId) {
+      await NotificationService.notify(
+        recipientUserId,
+        'message',
+        `New message from ${user.first_name || 'User'}`,
+        conversation_id
+      );
+    }
+
     res.status(201).json({
       success: true,
       message: 'Message sent successfully',

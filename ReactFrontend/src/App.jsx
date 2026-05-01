@@ -7,6 +7,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Header from "./components/common/Header/Header";
 import Footer from "./components/common/Footer/Footer";
@@ -35,8 +37,16 @@ import AdminCompanies from "./pages/admin/Companies/Companies";
 
 import Home from "./pages/Home";
 
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// Info Pages
+import PrivacyPolicy from "./pages/info/PrivacyPolicy";
+import TermsOfService from "./pages/info/TermsOfService";
+import CookiesPolicy from "./pages/info/CookiesPolicy";
+import CareerAdvice from "./pages/info/CareerAdvice";
+import SalaryGuide from "./pages/info/SalaryGuide";
+import Pricing from "./pages/info/Pricing";
+import RecruitmentSolutions from "./pages/info/RecruitmentSolutions";
+import PartnerWithUs from "./pages/info/PartnerWithUs";
+import Companies from "./pages/info/Companies";
 
 function App() {
   const ProtectedRoute = ({ children, requiredUserType }) => {
@@ -252,6 +262,17 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+
+              {/* Informational Routes */}
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/cookies-policy" element={<CookiesPolicy />} />
+              <Route path="/career-advice" element={<CareerAdvice />} />
+              <Route path="/salary-guide" element={<SalaryGuide />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/recruitment-solutions" element={<RecruitmentSolutions />} />
+              <Route path="/partner-with-us" element={<PartnerWithUs />} />
+              <Route path="/companies" element={<Companies />} />
 
               {/* Fallback Route */}
               <Route

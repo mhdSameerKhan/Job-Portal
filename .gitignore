@@ -49,6 +49,10 @@ build/
 **/dist/
 **/build/
 
+# Uploads and temporary files
+**/uploads/
+**/scratch/
+
 # Test reports
 test-reports/
 **/test-reports/

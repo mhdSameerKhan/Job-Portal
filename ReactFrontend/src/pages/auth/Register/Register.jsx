@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { useAuth } from "../../../context/AuthContext";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { register } = useAuth(); 
@@ -87,16 +88,22 @@ const Register = () => {
         // Handle field-specific errors from backend
         if (result.fieldErrors) {
           setErrors(result.fieldErrors);
+          toast.error("Please fix the errors in the form");
         } else {
           setErrors({ general: result.message || "Registration failed. Please try again." });
+          toast.error(result.message || "Registration failed");
         }
+      } else {
+        toast.success("Account created successfully!");
       }
     } catch (error) {
       // Handle field-specific errors from backend
       if (error.fieldErrors) {
         setErrors(error.fieldErrors);
+        toast.error("Please fix the errors in the form");
       } else {
         setErrors({ general: error.message || "Registration failed. Please try again." });
+        toast.error(error.message || "Registration failed");
       }
     } finally {
       setIsSubmitting(false);

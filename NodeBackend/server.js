@@ -18,6 +18,7 @@ const jobRoutes = require('./routes/jobs');
 const messagingRoutes = require('./routes/messaging');
 const adminRoutes = require('./routes/admin');
 const homeRoutes = require('./routes/home');
+const notificationRoutes = require('./routes/notifications');
 
 const app = express();
 const server = http.createServer(app);
@@ -99,6 +100,7 @@ app.use('/api/employer', employerRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/applications', require('./routes/applications'));
 app.use('/api/messaging', messagingRoutes);
+app.use('/api/notifications', notificationRoutes);
 console.log('Messaging routes registered at /api/messaging');
 app.use('/api/admin', adminRoutes);
 app.use('/api/home', homeRoutes);

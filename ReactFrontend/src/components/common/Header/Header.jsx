@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
+import NotificationBell from "../NotificationBell/NotificationBell";
 import "./Header.css";
 
 const Header = () => {
@@ -154,6 +155,7 @@ const Header = () => {
       <div className="header-actions">
         {authenticated ? (
           <>
+            <NotificationBell />
             {userType !== 3 && (
               <button
                 className="profile-btn"

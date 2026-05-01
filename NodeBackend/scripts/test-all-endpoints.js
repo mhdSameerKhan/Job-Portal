@@ -385,7 +385,7 @@ const testCases = [
       salary_max: 120000,
       salary_currency: 'USD',
       is_remote: true,
-      deadline: '2025-12-31'
+      deadline: '2027-12-31'
     },
     expectedStatus: 201,
     description: 'Create a new job listing'

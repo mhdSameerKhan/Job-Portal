@@ -232,6 +232,19 @@ router.patch('/:id', authenticate, async (req, res) => {
     // Update the application status
     await Application.update(id, { status });
 
+    // Create notification for student
+    const NotificationService = require('../services/NotificationService');
+    const StudentService = require('../services/StudentService');
+    const student = await StudentService.findById(application.student_id);
+    if (student && student.user_id) {
+      await NotificationService.notify(
+        student.user_id,
+        status === 'shortlisted' ? 'shortlisted' : 'application',
+        `Your application for "${job.title}" has been ${status}`,
+        application.id
+      );
+    }
+
     // Get the updated application
     const updatedApplication = await Application.findById(id);
 

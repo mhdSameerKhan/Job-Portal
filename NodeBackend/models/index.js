@@ -10,6 +10,7 @@ const ConversationService = require('../services/ConversationService');
 const MessageService = require('../services/MessageService');
 const AdminActivityLogService = require('../services/AdminActivityLogService');
 const TestimonialService = require('../services/TestimonialService');
+const NotificationService = require('../services/NotificationService');
 
 // For backward compatibility, export as the old model names
 const User = UserService;
@@ -23,6 +24,7 @@ const Conversation = ConversationService;
 const Message = MessageService;
 const AdminActivityLog = AdminActivityLogService;
 const Testimonial = TestimonialService;
+const Notification = NotificationService;
 
 module.exports = {
   User,
@@ -36,6 +38,7 @@ module.exports = {
   Message,
   AdminActivityLog,
   Testimonial,
+  Notification,
   // Also export as services
   UserService,
   UserProfileService,
@@ -47,5 +50,6 @@ module.exports = {
   ConversationService,
   MessageService,
   AdminActivityLogService,
-  TestimonialService
+  TestimonialService,
+  NotificationService
 };
